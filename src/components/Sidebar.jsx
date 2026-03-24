@@ -21,57 +21,76 @@ export default function Sidebar() {
 
     return (
         <aside className="sidebar">
-            <div className="sidebar-logo">
-                <span className="logo-icon">🎵</span>
-                <span className="logo-text">SoundWave</span>
-                <img src="/dolby-logo.png" alt="Dolby" className="sidebar-dolby-logo" />
+            <div className="sidebar-top-panel">
+                <div className="sidebar-logo">
+                    <span className="logo-icon">🎵</span>
+                    <span className="logo-text">SoundWave</span>
+                    <img src="/dolby-logo.png" alt="Dolby" className="sidebar-dolby-logo" />
+                </div>
+                <nav className="sidebar-nav">
+                    <NavLink to="/" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
+                        <span className="nav-icon">🏠</span> <span className="nav-label">Home</span>
+                    </NavLink>
+                    <NavLink to="/search" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
+                        <span className="nav-icon">🔍</span> <span className="nav-label">Search</span>
+                    </NavLink>
+                </nav>
             </div>
 
-            <nav className="sidebar-nav">
+            <div className="sidebar-bottom-panel">
+                <nav className="sidebar-nav lib-nav">
+                    <NavLink to="/library" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
+                        <span className="nav-icon">📚</span> <span className="nav-label">Your Library</span>
+                    </NavLink>
+                </nav>
+
+                <div className="sidebar-section-title">Languages</div>
+                <div className="language-list">
+                    {LANGUAGES.map(lang => (
+                        <NavLink
+                            key={lang.id}
+                            to={`/language/${lang.id}`}
+                            className={({ isActive }) => `lang-item ${isActive ? 'active' : ''}`}
+                            style={{ '--lang-color': lang.color }}
+                        >
+                            <span className="lang-flag">{lang.flag}</span>
+                            <span>{lang.label}</span>
+                        </NavLink>
+                    ))}
+                </div>
+
+                <div className="sidebar-bottom">
+                    {user ? (
+                        <div className="user-info">
+                            <div className="user-avatar">
+                                {user.photoURL
+                                    ? <img src={user.photoURL} alt="avatar" />
+                                    : <span>{(user.displayName || user.email || 'U')[0].toUpperCase()}</span>
+                                }
+                            </div>
+                            <div className="user-name">{user.displayName || user.email}</div>
+                            <button className="logout-btn" onClick={logout} title="Logout">⏻</button>
+                        </div>
+                    ) : (
+                        <button className="login-btn" onClick={() => navigate('/login')}>
+                            Log In
+                        </button>
+                    )}
+                </div>
+            </div>
+
+            {/* Mobile Bottom Navigation Bar ONLY */}
+            <nav className="mobile-nav">
                 <NavLink to="/" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
-                    <span className="nav-icon">🏠</span> Home
+                    <span className="nav-icon">🏠</span> <span>Home</span>
                 </NavLink>
                 <NavLink to="/search" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
-                    <span className="nav-icon">🔍</span> Search
+                    <span className="nav-icon">🔍</span> <span>Search</span>
                 </NavLink>
                 <NavLink to="/library" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
-                    <span className="nav-icon">📚</span> Your Library
+                    <span className="nav-icon">📚</span> <span>Library</span>
                 </NavLink>
             </nav>
-
-            <div className="sidebar-section-title">Languages</div>
-            <div className="language-list">
-                {LANGUAGES.map(lang => (
-                    <NavLink
-                        key={lang.id}
-                        to={`/language/${lang.id}`}
-                        className={({ isActive }) => `lang-item ${isActive ? 'active' : ''}`}
-                        style={{ '--lang-color': lang.color }}
-                    >
-                        <span className="lang-flag">{lang.flag}</span>
-                        <span>{lang.label}</span>
-                    </NavLink>
-                ))}
-            </div>
-
-            <div className="sidebar-bottom">
-                {user ? (
-                    <div className="user-info">
-                        <div className="user-avatar">
-                            {user.photoURL
-                                ? <img src={user.photoURL} alt="avatar" />
-                                : <span>{(user.displayName || user.email || 'U')[0].toUpperCase()}</span>
-                            }
-                        </div>
-                        <div className="user-name">{user.displayName || user.email}</div>
-                        <button className="logout-btn" onClick={logout} title="Logout">⏻</button>
-                    </div>
-                ) : (
-                    <button className="login-btn" onClick={() => navigate('/login')}>
-                        Log In
-                    </button>
-                )}
-            </div>
         </aside>
     );
 }

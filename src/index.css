@@ -11,8 +11,8 @@
 :root {
   --green: #1db954;
   --green-light: #1ed760;
-  --bg: #0c0c0c;
-  --bg-elevated: #181818;
+  --bg: #000000;
+  --bg-elevated: #121212;
   --bg-highlight: #282828;
   --text: #ffffff;
   --text-sub: #b3b3b3;
@@ -36,8 +36,11 @@ body {
 /* ---- LAYOUT ---- */
 .app-layout {
   display: flex;
-  height: 100vh;
+  height: calc(100vh - 90px); /* Leave exactly 90px at bottom for player */
   overflow: hidden;
+  background: var(--bg);
+  padding: 8px; /* App level margin */
+  gap: 8px;     /* Gap between sidebar and main area */
 }
 
 .main-area {
@@ -46,13 +49,14 @@ body {
   flex-direction: column;
   overflow: hidden;
   min-width: 0;
+  background: var(--bg-elevated);
+  border-radius: 8px;
 }
 
 .page-content {
   flex: 1;
   overflow-y: auto;
-  padding-bottom: 90px;
-  /* player height */
+  padding-bottom: 30px; /* Reduced since height restricts to player */
   scrollbar-width: thin;
   scrollbar-color: #535353 transparent;
 }
@@ -127,6 +131,13 @@ input {
 @media (max-width: 768px) {
   .app-layout {
     flex-direction: column;
+    height: 100vh;
+    padding: 0;
+    gap: 0;
+  }
+  .main-area {
+    border-radius: 0;
+    background: #000000;
   }
   .page-content {
     /* Height of player (56px) + nav (60px) = 116px */

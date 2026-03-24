@@ -1,15 +1,35 @@
 .sidebar {
-  width: 240px;
-  min-width: 240px;
-  background: #0a0a0a;
-  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  width: 280px;
+  min-width: 280px;
+  background: transparent;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  overflow-y: auto;
-  position: sticky;
-  top: 0;
-  padding: 0 0 90px 0;
+  gap: 8px;
+  height: 100%;
+  position: relative;
+}
+
+.sidebar-top-panel,
+.sidebar-bottom-panel {
+  background: #121212;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-top-panel {
+  padding: 8px 12px;
+}
+
+.sidebar-bottom-panel {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav {
+  display: none;
 }
 
 .sidebar-logo {
@@ -214,32 +234,27 @@
     height: 60px;
     padding: 0;
     flex-direction: row;
-    justify-content: center;
-    border-right: none;
-    border-top: 1px solid rgba(255,255,255,0.05);
-    background: #121212; /* Solid background for max performance on mobile */
-    backdrop-filter: none; /* Disable blur to fix mobile stuttering */
-    z-index: 9998; /* Strictly less than .player (9999) so max-player covers it */
+    background: #000000;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 9998;
+    gap: 0;
   }
 
-  .sidebar-logo, 
-  .sidebar-section-title, 
-  .language-list, 
-  .sidebar-bottom {
+  .sidebar-top-panel, 
+  .sidebar-bottom-panel {
     display: none;
   }
 
-  .sidebar-nav {
+  .mobile-nav {
+    display: flex;
     flex-direction: row;
     width: 100%;
-    max-width: 400px;
     justify-content: space-around;
     padding: 0 16px;
-    gap: 0;
     align-items: center;
   }
 
-  .nav-item {
+  .mobile-nav .nav-item {
     flex-direction: column;
     gap: 4px;
     font-size: 10px;
@@ -248,17 +263,13 @@
     color: #a7a7a7;
   }
 
-  .nav-item:hover {
+  .mobile-nav .nav-item:hover,
+  .mobile-nav .nav-item.active {
     color: #fff;
-    background: transparent;
+    background: transparent !important;
   }
 
-  .nav-item.active {
-    color: #fff;
-    background: transparent;
-  }
-
-  .nav-icon {
+  .mobile-nav .nav-icon {
     font-size: 24px;
   }
 }
