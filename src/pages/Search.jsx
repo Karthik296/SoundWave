@@ -2,7 +2,6 @@ import { useState, useEffect, useCallback } from 'react';
 import { searchSongs, searchAlbums, searchArtists } from '../services/saavnApi';
 import SongCard from '../components/SongCard';
 import { useNavigate } from 'react-router-dom';
-import { getSongImage } from '../services/saavnApi';
 import './Search.css';
 
 const TABS = ['Songs', 'Albums', 'Artists'];

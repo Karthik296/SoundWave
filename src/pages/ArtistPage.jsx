@@ -11,6 +11,7 @@ export default function ArtistPage() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        // eslint-disable-next-line
         setLoading(true);
         Promise.all([getArtist(id), getArtistSongs(id)])
             .then(([a, s]) => { setArtist(a); setSongs(s); })

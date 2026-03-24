@@ -20,6 +20,6 @@ export const auth = getAuth(app);
 export const db = getFirestore(app);
 export const storage = getStorage(app);
 export const googleProvider = new GoogleAuthProvider();
-try { getAnalytics(app); } catch (e) { }
+try { getAnalytics(app); } catch { /* ignore */ }
 
 export default app;

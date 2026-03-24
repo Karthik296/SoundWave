@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getAlbum, getSongImage } from '../services/saavnApi';
+import { getAlbum } from '../services/saavnApi';
 import { usePlayer } from '../context/PlayerContext';
 import SongCard from '../components/SongCard';
 import './AlbumPage.css';
@@ -12,6 +12,7 @@ export default function AlbumPage() {
     const { playSong } = usePlayer();
 
     useEffect(() => {
+        // eslint-disable-next-line
         setLoading(true);
         getAlbum(id).then(setAlbum).catch(console.error).finally(() => setLoading(false));
     }, [id]);

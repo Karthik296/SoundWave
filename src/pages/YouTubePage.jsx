@@ -118,7 +118,6 @@ export default function YouTubePage() {
                         {results.map((vid, idx) => {
                             // Trending streams vs search streams have slightly different url patterns in piped
                             // Piped URLs in trending usually start with /watch?v=, search results use /watch?v=
-                            const videoId = vid.url.includes('watch?v=') ? vid.url.split('watch?v=')[1] : null;
 
                             return (
                                 <div key={idx} className="yt-video-card" onClick={() => setSelectedVideo(vid)}>
