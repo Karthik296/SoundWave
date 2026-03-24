@@ -216,10 +216,10 @@
     flex-direction: row;
     justify-content: center;
     border-right: none;
-    border-top: none;
-    background: linear-gradient(to top, rgba(0,0,0,1) 30%, rgba(0,0,0,0.85) 100%);
-    backdrop-filter: blur(10px);
-    z-index: 10000;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    background: #121212; /* Solid background for max performance on mobile */
+    backdrop-filter: none; /* Disable blur to fix mobile stuttering */
+    z-index: 9998; /* Strictly less than .player (9999) so max-player covers it */
   }
 
   .sidebar-logo, 

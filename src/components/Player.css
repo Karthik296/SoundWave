@@ -811,6 +811,7 @@
     padding: 0 10px;
     border-radius: 6px;
     background: #2a2a2a;
+    backdrop-filter: none; /* Disable blur to fix mobile lag */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
     border-top: none;
     justify-content: space-between;
