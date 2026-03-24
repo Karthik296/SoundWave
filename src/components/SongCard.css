@@ -168,3 +168,46 @@
 .song-options-menu button:hover {
     background: rgba(255, 255, 255, 0.1);
 }
+
+/* --- Mobile List View Overrides --- */
+@media (max-width: 768px) {
+    .song-card {
+        flex-direction: row;
+        align-items: center;
+        padding: 8px 12px;
+        gap: 12px;
+        background: transparent;
+        border-radius: 0;
+        width: 100%;
+    }
+    
+    .song-card:hover, .song-card.active { 
+        background: rgba(255, 255, 255, 0.05); 
+    }
+    
+    .song-card-img {
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
+    }
+    
+    .song-card-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .song-card-name { 
+        font-size: 15px; 
+    }
+    
+    .song-card-artist {
+        font-size: 13px;
+        margin-top: 2px;
+    }
+    
+    .song-play-btn, .song-overlay { 
+        display: none !important; 
+    }
+}

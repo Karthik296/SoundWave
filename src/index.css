@@ -129,7 +129,13 @@ input {
     flex-direction: column;
   }
   .page-content {
-    /* Height of player (65px) + nav (65px) = 130px padding */
-    padding-bottom: 140px !important;
+    /* Height of player (56px) + nav (60px) = 116px */
+    padding-bottom: 120px !important;
+  }
+  
+  /* Force grids to single column lists on mobile */
+  .songs-grid, .songs-grid-result {
+    grid-template-columns: 1fr !important;
+    gap: 0px !important;
   }
 }
