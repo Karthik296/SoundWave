@@ -23,7 +23,7 @@ export default function Sidebar() {
         <aside className="sidebar">
             <div className="sidebar-top-panel">
                 <div className="sidebar-logo">
-                    <img src="/logo.png" alt="SoundWave Logo" style={{ width: '32px', height: '32px', borderRadius: '8px' }} />
+                    <img src="/soundwave-logo.png" alt="SoundWave Logo" style={{ width: '32px', height: '32px', borderRadius: '8px' }} />
                     <span className="logo-text">SoundWave</span>
                 </div>
                 <nav className="sidebar-nav">

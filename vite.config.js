@@ -15,23 +15,23 @@ export default defineConfig({
         name: 'SoundWave',
         short_name: 'SoundWave',
         description: 'Global Music Application with Dolby 3D Audio',
-        theme_color: '#121212',
-        background_color: '#121212',
+        theme_color: '#000000',
+        background_color: '#000000',
         display: 'standalone',
         orientation: 'portrait-primary',
         icons: [
           {
-            src: '/pwa-192x192.png',
+            src: '/soundwave-192.png',
             sizes: '192x192',
             type: 'image/png'
           },
           {
-            src: '/pwa-512x512.png',
+            src: '/soundwave-512.png',
             sizes: '512x512',
             type: 'image/png'
           },
           {
-            src: '/pwa-512x512.png',
+            src: '/soundwave-512.png',
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any maskable'
