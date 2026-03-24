@@ -4,6 +4,7 @@ import { db } from '../services/firebase';
 import { doc, updateDoc, arrayUnion, setDoc, getDoc } from 'firebase/firestore';
 import { getSongImage } from '../services/saavnApi';
 import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import Equalizer from './Equalizer';
 import SpatialAudioController from './SpatialAudioController';
 import './Player.css';
@@ -73,10 +74,10 @@ export default function Player() {
     const pct = duration ? (progress / duration) * 100 : 0;
     return (
         <>
-            {showEq && <Equalizer onClose={() => setShowEq(false)} />}
-            {showSpatial && <SpatialAudioController onClose={() => setShowSpatial(false)} />}
+            {showEq && createPortal(<Equalizer onClose={() => setShowEq(false)} />, document.body)}
+            {showSpatial && createPortal(<SpatialAudioController onClose={() => setShowSpatial(false)} />, document.body)}
 
-            {showQueue && (
+            {showQueue && createPortal(
                 <div className="queue-panel">
                     <div className="queue-header">
                         <h3>Queue</h3>
@@ -99,7 +100,8 @@ export default function Player() {
                         ))}
                         {queue.length === 0 && <div className="queue-empty">Queue is empty</div>}
                     </div>
-                </div>
+                </div>,
+                document.body
             )}
 
             <div
