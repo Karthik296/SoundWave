@@ -1345,19 +1345,23 @@
     margin-bottom: auto;
   }
 
-  /* Make Cover HUGE like Spotify */
+  /* Make Cover perfectly responsive like Spotify */
   .expanded-cover-wrap {
-    flex: none;
-    height: calc(100vw - 48px); /* Square based on screen width */
-    max-height: 48vh; /* Prevent overflowing on weird devices */
-    margin: 4vh 0;
+    flex: 1; /* Takes all remaining vertical space safely */
+    min-height: 0;
+    width: 100%;
+    margin: 2vh 0;
+    display: flex;
     align-items: center;
+    justify-content: center;
   }
   
   .expanded-cover-img, .expanded-cover-placeholder {
-    width: 100% !important;
     height: 100% !important;
+    width: auto !important;
     max-width: 100% !important;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.5);
     animation: none; /* disable hover scale */
