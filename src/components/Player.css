@@ -1326,3 +1326,139 @@
 .player--expanded .player-expanded-visual+.player-main-bar .player-img {
     display: none;
 }
+
+/* --- Mobile Expanded Player (Spotify Exact Clone) --- */
+@media (max-width: 768px) {
+  .player.player--expanded {
+    height: 100dvh; /* Fixes address bar cutoff on mobile! */
+    background: #121212;
+  }
+
+  .player-expanded-layout {
+    padding: 0 24px 32px 24px;
+    height: 100%;
+    justify-content: space-between;
+  }
+
+  .expanded-topbar {
+    padding-top: 16px;
+    margin-bottom: auto;
+  }
+
+  /* Make Cover HUGE like Spotify */
+  .expanded-cover-wrap {
+    flex: none;
+    height: calc(100vw - 48px); /* Square based on screen width */
+    max-height: 48vh; /* Prevent overflowing on weird devices */
+    margin: 4vh 0;
+    align-items: center;
+  }
+  
+  .expanded-cover-img, .expanded-cover-placeholder {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    animation: none; /* disable hover scale */
+  }
+
+  .expanded-cover-img:hover, .expanded-cover-img.playing {
+    transform: none; /* disable hover scale on mobile */
+    animation: none;
+  }
+
+  .expanded-song-info {
+    margin-bottom: 20px;
+    padding-bottom: 0;
+    animation: none;
+  }
+
+  .expanded-song-name {
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  .expanded-song-artist {
+    font-size: 16px;
+    color: #b3b3b3;
+    margin-top: 4px;
+  }
+
+  .exp-like {
+    font-size: 28px;
+    opacity: 1;
+  }
+
+  /* Progress Bar Tweaks: Time labels below the bar just like Spotify */
+  .expanded-progress {
+    margin-bottom: 24px;
+    position: relative;
+    padding-bottom: 20px;
+    animation: none;
+  }
+
+  .expanded-progress .progress-track {
+    width: 100%;
+    margin: 0;
+  }
+  
+  .expanded-progress .time-label {
+    position: absolute;
+    bottom: 0px; 
+    font-size: 11px;
+    color: #a7a7a7;
+    min-width: unset;
+  }
+  
+  .expanded-progress .time-label:first-child {
+    left: 0;
+  }
+  
+  .expanded-progress .time-label:last-child {
+    right: 0;
+  }
+
+  /* Controls spacing */
+  .expanded-controls {
+    justify-content: space-between;
+    padding: 0;
+    margin-bottom: 32px;
+    animation: none;
+  }
+
+  .expanded-controls .play-btn {
+    width: 64px;
+    height: 64px;
+    font-size: 24px;
+  }
+
+  .expanded-controls .ctrl-btn {
+    font-size: 32px;
+    opacity: 1;
+  }
+
+  /* Accessories row at very bottom */
+  .expanded-accessories {
+    justify-content: space-between;
+    padding: 0;
+    animation: none;
+  }
+
+  .expanded-accessories .dolby-btn {
+    padding: 6px 12px;
+  }
+
+  .expanded-volume {
+    width: 100px; /* Compress volume slider to fit features */
+  }
+
+  .expanded-volume .vol-slider {
+    width: 100%;
+  }
+
+  /* Force background to be cleaner on mobile if image lacks contrast */
+  .player-bg-overlay {
+    background: linear-gradient(to bottom, rgba(18,18,18,0.6) 0%, rgba(18,18,18,0.95) 40%, rgba(18,18,18,1) 100%);
+  }
+}
