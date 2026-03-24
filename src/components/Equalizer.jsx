@@ -44,8 +44,7 @@ export default function Equalizer({ onClose }) {
                 {/* Header */}
                 <div className="eq-header">
                     <div className="eq-title" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                        <img src="/dolby-atmos-logo.png" alt="Dolby Atmos" className="dolby-logo-header" />
-                        <span style={{ color: 'rgba(255,255,255,0.8)', fontSize: '18px', fontWeight: 'bold' }}>/ DTS:X</span>
+                        <span style={{ color: '#1db954', fontSize: '18px', fontWeight: 'bold' }}>SoundWave HD Audio</span>
                     </div>
                     <div className="eq-header-right">
                         <button

@@ -191,9 +191,10 @@ export default function Player() {
                                 <button
                                     className={`dolby-btn ${dolbyEnabled ? 'active' : ''}`}
                                     onClick={() => setShowEq(true)}
-                                    title="Dolby & DTS EQ"
+                                    title="SoundWave HD Audio Enhancer"
+                                    style={{ background: 'none', border: 'none', color: dolbyEnabled ? '#1db954' : '#b3b3b3', fontSize: '1.2rem', cursor: 'pointer', padding: '0 8px' }}
                                 >
-                                    <img src="/dolby-logo.png" alt="Dolby" className="dolby-logo-img" />
+                                    🎛️
                                 </button>
 
                                 <button
@@ -280,9 +281,10 @@ export default function Player() {
                             <button
                                 className={`dolby-btn ${dolbyEnabled ? 'active' : ''}`}
                                 onClick={(e) => { e.stopPropagation(); setShowEq(true); }}
-                                title="Dolby & DTS Audio Enhancement"
+                                title="HD Audio EQ"
+                                style={{ background: 'none', border: 'none', color: dolbyEnabled ? '#1db954' : '#b3b3b3', fontSize: '1.2rem', cursor: 'pointer', padding: '0 8px' }}
                             >
-                                <img src="/dolby-logo.png" alt="Dolby" className="dolby-logo-img" />
+                                🎛️
                             </button>
 
                             <button

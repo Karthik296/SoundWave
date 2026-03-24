@@ -82,7 +82,6 @@ export default function SpatialAudioController({ onClose }) {
         <div className="spatial-overlay" onClick={onClose}>
             <div className="spatial-panel" onClick={(e) => e.stopPropagation()}>
                 <div className="spatial-header">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Dolby_Atmos_Logo.svg" alt="Dolby Atmos" className="spatial-dolby-logo" />
                     <h2>Spatial Audio 3D Controller</h2>
                     <button className="spatial-close-btn" onClick={onClose}>✕</button>
                 </div>

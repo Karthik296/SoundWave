@@ -23,9 +23,8 @@ export default function Sidebar() {
         <aside className="sidebar">
             <div className="sidebar-top-panel">
                 <div className="sidebar-logo">
-                    <span className="logo-icon">🎵</span>
+                    <img src="/logo.png" alt="SoundWave Logo" style={{ width: '32px', height: '32px', borderRadius: '8px' }} />
                     <span className="logo-text">SoundWave</span>
-                    <img src="/dolby-logo.png" alt="Dolby" className="sidebar-dolby-logo" />
                 </div>
                 <nav className="sidebar-nav">
                     <NavLink to="/" className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
