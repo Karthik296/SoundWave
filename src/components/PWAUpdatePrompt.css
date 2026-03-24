@@ -1,0 +1,66 @@
+.pwa-toast {
+    position: fixed;
+    right: 20px;
+    bottom: 110px;
+    background: #121212;
+    border: 1px solid #1db954;
+    border-radius: 8px;
+    padding: 16px;
+    z-index: 100000;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    max-width: 320px;
+}
+
+.pwa-message {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.pwa-desc {
+    color: #a7a7a7;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.pwa-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.pwa-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.pwa-reload {
+    background: #1db954;
+    color: #000;
+}
+
+.pwa-reload:hover {
+    background: #1ed760;
+    transform: scale(1.05);
+}
+
+.pwa-close {
+    background: transparent;
+    color: #b3b3b3;
+}
+
+.pwa-close:hover {
+    color: #fff;
+}

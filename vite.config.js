@@ -9,7 +9,7 @@ export default defineConfig({
       include: ['**/*.jsx', '**/*.tsx'],
     }),
     VitePWA({
-      registerType: 'autoUpdate',
+      registerType: 'prompt',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
       manifest: {
         name: 'SoundWave',

@@ -16,6 +16,7 @@ import Login from './pages/Login';
 import Account from './pages/Account';
 import IntroScreen from './components/IntroScreen';
 import InstallPrompt from './components/InstallPrompt';
+import PWAUpdatePrompt from './components/PWAUpdatePrompt';
 
 export default function App() {
   const [showIntro, setShowIntro] = useState(true);
@@ -46,6 +47,7 @@ export default function App() {
             </div>
             <Player />
             <InstallPrompt />
+            <PWAUpdatePrompt />
           </div>
         </PlayerProvider>
       </AuthProvider>
