@@ -1,0 +1,218 @@
+.search-page {
+    padding: 32px;
+    padding-bottom: 30px;
+}
+
+.search-heading {
+    font-size: 32px;
+    font-weight: 900;
+    color: #fff;
+    margin: 0 0 24px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 32px;
+    padding: 12px 20px;
+    gap: 12px;
+    max-width: 640px;
+}
+
+.search-icon {
+    font-size: 18px;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    font-weight: 500;
+    color: #000;
+    background: transparent;
+}
+
+.search-clear {
+    background: none;
+    border: none;
+    color: #535353;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Browse */
+.search-browse {
+    margin-top: 32px;
+}
+
+.search-browse h2 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #fff;
+    margin: 0 0 20px;
+}
+
+.browse-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 14px;
+}
+
+.browse-card {
+    height: 120px;
+    border-radius: 12px;
+    background: hsl(var(--card-hue, 0deg) 60% 35%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 16px;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.browse-card:hover {
+    transform: scale(1.03);
+}
+
+.browse-emoji {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 36px;
+    opacity: 0.6;
+}
+
+.browse-label {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+/* Results */
+.search-results {
+    margin-top: 24px;
+}
+
+.tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.tab-btn {
+    padding: 8px 20px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: none;
+    color: #b3b3b3;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.tab-btn.active {
+    background: #fff;
+    color: #000;
+    border-color: #fff;
+}
+
+.tab-btn:hover:not(.active) {
+    border-color: #fff;
+    color: #fff;
+}
+
+.songs-grid-result {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+}
+
+.album-grid,
+.artist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+}
+
+.album-card,
+.artist-card {
+    cursor: pointer;
+    transition: background 0.15s;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.album-card:hover,
+.artist-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.album-card-img,
+.artist-img {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #282828;
+    margin-bottom: 10px;
+}
+
+.artist-img {
+    border-radius: 50%;
+}
+
+.album-card-img img,
+.artist-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.album-card-name,
+.artist-card-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 4px;
+}
+
+.album-card-year,
+.artist-card-type {
+    font-size: 12px;
+    color: #b3b3b3;
+}
+
+.no-results {
+    color: #535353;
+    font-size: 14px;
+    padding: 20px 0;
+}
+
+.loading-screen {
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.loader {
+    width: 36px;
+    height: 36px;
+    border: 3px solid rgba(29, 185, 84, 0.2);
+    border-top-color: #1db954;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

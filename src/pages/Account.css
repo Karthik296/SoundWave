@@ -1,0 +1,359 @@
+.account-page {
+    flex: 1;
+    overflow-y: auto;
+    background: #121212;
+    padding-bottom: 110px;
+    display: flex;
+    flex-direction: column;
+}
+
+.account-header {
+    position: relative;
+    padding: 60px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 250px;
+}
+
+.account-header-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(83, 83, 83, 1) 0%, rgba(18, 18, 18, 1) 100%);
+    opacity: 0.8;
+}
+
+.account-profile-section {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.account-avatar-large {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: #282828;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+    font-weight: 700;
+    color: #fff;
+    overflow: hidden;
+}
+
+.account-avatar-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.account-user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.account-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 8px;
+}
+
+.account-name {
+    font-size: 64px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 16px 0;
+    line-height: 1.1;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.account-email {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+.account-content {
+    padding: 32px 40px;
+}
+
+.account-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.account-card {
+    background: #181818;
+    border-radius: 8px;
+    padding: 24px;
+    transition: background 0.2sease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.account-card:hover {
+    background: #282828;
+}
+
+.account-card h3 {
+    margin: 0 0 16px 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.highlight {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 8px 0;
+}
+
+.highlight-stat {
+    font-size: 32px;
+    font-weight: 800;
+    color: #1db954;
+    margin: 0 0 8px 0;
+}
+
+.stat-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.subtext {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.5;
+    margin: 0 0 24px 0;
+    flex-grow: 1;
+    /* Pushes button to bottom */
+}
+
+.premium-btn {
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: transform 0.2sease, background 0.2sease;
+}
+
+.premium-btn:hover {
+    transform: scale(1.05);
+    background: #f0f0f0;
+}
+
+.outline-btn {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: border-color 0.2sease, transform 0.2sease;
+}
+
+.outline-btn:hover {
+    border-color: #fff;
+    transform: scale(1.05);
+}
+
+.account-actions {
+    margin-top: 48px;
+    display: flex;
+    justify-content: center;
+}
+
+.logout-btn-large {
+    background: transparent;
+    color: #1db954;
+    border: 1px solid #1db954;
+    padding: 14px 48px;
+    border-radius: 24px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2sease;
+}
+
+.logout-btn-large:hover {
+    background: rgba(29, 185, 84, 0.1);
+    transform: scale(1.02);
+}
+
+.stats-loader {
+    width: 24px;
+    height: 24px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top-color: #1db954;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 34px;
+}
+
+/* Edit Profile Styles */
+.edit-profile-btn {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 12px;
+    width: fit-content;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.edit-profile-btn:hover {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.edit-profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 8px;
+    min-width: 300px;
+}
+
+.edit-input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 16px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.edit-input:focus {
+    border-color: #1db954;
+}
+
+.edit-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.edit-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.save-btn {
+    background: #1db954;
+    color: #000;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    flex: 1;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.save-btn:hover:not(:disabled) {
+    transform: scale(1.02);
+    background: #1ed760;
+}
+
+.save-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.cancel-btn {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    flex: 1;
+    transition: background 0.2s ease;
+}
+
+.cancel-btn:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.cancel-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Upload Styles */
+.account-avatar-large {
+    position: relative;
+    cursor: pointer;
+}
+
+.upload-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    border-radius: 50%;
+}
+
+.account-avatar-large:hover .upload-overlay {
+    opacity: 1;
+}
+
+.file-trigger-btn {
+    width: 100%;
+    margin-top: 4px;
+    text-align: center;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.upload-progress-bar {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    margin-top: 4px;
+    overflow: hidden;
+}
+
+.upload-progress-fill {
+    height: 100%;
+    background: #1db954;
+    transition: width 0.3s ease;
+}

@@ -1,0 +1,135 @@
+.library-page {
+    padding: 32px;
+    padding-bottom: 30px;
+}
+
+.library-header {
+    margin-bottom: 32px;
+}
+
+.library-header h1 {
+    font-size: 32px;
+    font-weight: 900;
+    color: #fff;
+    margin: 0 0 8px;
+}
+
+.library-header p {
+    color: #b3b3b3;
+    font-size: 14px;
+}
+
+.library-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    text-align: center;
+    gap: 12px;
+}
+
+.library-empty-icon {
+    font-size: 60px;
+}
+
+.library-empty h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+}
+
+.library-empty p {
+    color: #b3b3b3;
+    font-size: 14px;
+}
+
+.login-cta {
+    margin-top: 8px;
+    padding: 12px 32px;
+    background: #1db954;
+    border: none;
+    border-radius: 50px;
+    color: #000;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.login-cta:hover {
+    background: #1ed760;
+    transform: scale(1.04);
+}
+
+.liked-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.liked-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.liked-row:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.liked-num {
+    width: 24px;
+    text-align: center;
+    font-size: 14px;
+    color: #535353;
+    flex-shrink: 0;
+}
+
+.liked-img {
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #282828;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.liked-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.liked-info {
+    flex: 1;
+    overflow: hidden;
+}
+
+.liked-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.liked-artist {
+    font-size: 12px;
+    color: #b3b3b3;
+    margin-top: 3px;
+}
+
+.liked-heart {
+    color: #1db954;
+    font-size: 18px;
+}
