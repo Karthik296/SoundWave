@@ -800,6 +800,41 @@
     border: none;
 }
 
+/* --- Mobile Mini-Player adjustments --- */
+@media (max-width: 768px) {
+  .player:not(.player--expanded) {
+    bottom: 65px; /* Above the mobile bottom navigation */
+    height: 65px;
+    padding: 0 12px;
+  }
+  
+  .player:not(.player--expanded) .player-progress,
+  .player:not(.player--expanded) .player-right {
+    display: none;
+  }
+
+  .player:not(.player--expanded) .player-center {
+    flex: unset;
+    margin-left: auto;
+  }
+
+  .player:not(.player--expanded) .ctrl-btn[title="Previous"] {
+    display: none;
+  }
+
+  .player:not(.player--expanded) .play-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .player:not(.player--expanded) .player-info {
+    flex: 1;
+    min-width: 0;
+    max-width: none;
+  }
+}
+
 .video-loading {
     display: flex;
     flex-direction: column;

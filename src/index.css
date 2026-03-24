@@ -122,3 +122,14 @@ input {
   background: #535353;
   border-radius: 3px;
 }
+
+/* Mobile Overrides */
+@media (max-width: 768px) {
+  .app-layout {
+    flex-direction: column;
+  }
+  .page-content {
+    /* Height of player (65px) + nav (65px) = 130px padding */
+    padding-bottom: 140px !important;
+  }
+}

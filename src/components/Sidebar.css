@@ -202,3 +202,55 @@
   background: #1ed760;
   transform: scale(1.02);
 }
+
+/* --- Mobile Bottom Navigation --- */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    min-width: 0;
+    height: 65px;
+    padding: 0;
+    flex-direction: row;
+    justify-content: center;
+    border-right: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(15px);
+    z-index: 10000;
+  }
+
+  .sidebar-logo, 
+  .sidebar-section-title, 
+  .language-list, 
+  .sidebar-bottom {
+    display: none;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    width: 100%;
+    max-width: 400px;
+    justify-content: space-evenly;
+    padding: 0;
+    gap: 0;
+  }
+
+  .nav-item {
+    flex-direction: column;
+    gap: 4px;
+    font-size: 10px;
+    padding: 8px 12px;
+    background: transparent !important;
+  }
+
+  .nav-item.active {
+    color: #fff;
+  }
+
+  .nav-icon {
+    font-size: 22px;
+  }
+}
