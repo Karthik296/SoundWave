@@ -802,6 +802,11 @@
 
 /* --- Mobile Mini-Player adjustments (Spotify Style) --- */
 @media (max-width: 768px) {
+  /* Completely hide the 'Select a song' pill on mobile like Spotify */
+  .player.player--empty {
+    display: none !important;
+  }
+
   .player:not(.player--expanded) {
     bottom: 64px; /* Right above bottom nav */
     left: 8px;
