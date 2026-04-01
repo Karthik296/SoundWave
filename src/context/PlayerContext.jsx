@@ -160,7 +160,7 @@ export function PlayerProvider({ children }) {
     }, [audio]);
 
     // MediaSession integration
-    useMediaSession();
+    useMediaSession({ currentSong, isPlaying, togglePlayPause, playNext, playPrev });
 
     return (
         <PlayerContext.Provider value={{

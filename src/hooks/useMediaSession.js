@@ -1,21 +1,13 @@
-import { usePlayer } from '../context/PlayerContext';
 import { useEffect, useCallback } from 'react';
 import { getSongImage } from '../services/saavnApi';
 
-export function useMediaSession() {
-  const player = usePlayer();
-  if (!player) return;
-
-  const {
-    currentSong,
-    isPlaying,
-    togglePlayPause,
-    playNext,
-    playPrev,
-    queue,
-    queueIndex
-  } = player;
-
+export function useMediaSession({
+  currentSong,
+  isPlaying,
+  togglePlayPause,
+  playNext,
+  playPrev
+} = {}) {
   const updateMediaSessionMetadata = useCallback(() => {
     if ('mediaSession' in navigator && currentSong) {
       navigator.mediaSession.metadata = new MediaMetadata({
