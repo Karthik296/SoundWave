@@ -9,6 +9,13 @@ export default function PWAUpdatePrompt() {
     } = useRegisterSW({
         onRegistered(r) {
             console.log('SW Registered: ' + r);
+            // Periodically check for updates if the app is left open
+            if (r) {
+                setInterval(() => {
+                    console.log('Checking for SW update...');
+                    r.update();
+                }, 60 * 60 * 1000); // 1 hour
+            }
         },
         onRegisterError(error) {
             console.log('SW registration error', error);
